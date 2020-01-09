@@ -1,0 +1,34 @@
+﻿
+
+  
+        <div class="navbar navbar-default navbar-expand-lg navbar-fixed-top">
+            @Html.ActionLink("Vidly", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-target="#collapsingPart" data-toggle="collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+
+
+
+
+            <div class="collapse navbar-collapse" id="collapsingPart">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Customers", "Index", "Customers")</li>
+                    <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
+                    <li>@Html.ActionLink("New Rental", "New", "RentalsNonAPI")</li>
+                    <li>@Html.ActionLink("About", "Index", "About")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+
+            </div>
+
+        </div>
+
+
+
+

@@ -1,0 +1,181 @@
+﻿body {
+    padding-top: 5rem;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5rem;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.field-validation-error,label.error {
+    color: red;
+}
+
+.input-validation-error,input.error {
+    border: 2px solid red;
+}
+
+.header {
+    background-image: url('../img/pantonima.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+    padding-bottom:0px;
+}
+
+.overlay {
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(244, 244, 244, 0.79);
+}
+
+.description {
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    padding: 2em;
+}
+
+    .description h1 {
+        color: #F97300;
+    }
+
+    .description p {
+        color: #666;
+        font-size: 20px;
+        width: 100%;
+        line-height: 1.5;
+    }
+
+    .description button {
+        border: 1px solid #F97300;
+        background: #F97300;
+        color: #fff;
+    }
+
+
+
+img.TileImg {
+    max-width: 30%;
+    height: auto;
+}
+
+
+.navbar-default {
+    background-color: #ff5500;
+    margin-bottom: 0px;
+    border:0px;
+}
+
+    /* change the brand and text color */
+    .navbar-default .navbar-brand,
+    .navbar-default .navbar-text {
+        color: #ffffff;
+    }
+    /* change the link color */
+    .navbar-default .navbar-nav .nav-link {
+        color: #ffffff;
+        padding-bottom:0
+    }
+
+    .customnavlink {
+        color: #ffffff;
+        padding-bottom: 0
+    }
+
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+/* change the color of active or hovered links */
+.navbar-default .nav-item.active .nav-link,
+.navbar-default .nav-item:hover .nav-link {
+    color: #333;
+    background-color: #ff5500;
+}
+
+
+.blog {
+    margin: 4em 0;
+    position: relative;
+}
+
+    .blog h1 {
+        color: #F97300;
+        margin: 2em;
+    }
+
+    .blog .card {
+        box-shadow: 0 0 20px #ccc;
+    }
+
+        .blog .card img {
+            width: 100%;
+            height: 12em;
+        }
+
+    .blog .card-title {
+        color: #F97300;
+    }
+
+    .blog .card-body {
+        padding: 1em;
+    }
+
+.team {
+    margin: 4em 0;
+    position: relative;
+}
+
+    .team h1 {
+        color: #F97300;
+        margin: 2em;
+    }
+
+    .team .item {
+        position: relative;
+    }
+
+    .team .des {
+        background: #F97300;
+        color: #fff;
+        text-align: center;
+        border-bottom-left-radius: 93%;
+        transition: .3s ease-in-out;
+    }
+
+
+    .team .item:hover .des {
+        height: 100%;
+        background: #f973007d;
+        position: absolute;
+        width: 89%;
+        padding: 5em;
+        top: 0;
+        border-bottom-left-radius: 0;
+    }
+
+
+
+
+
+
