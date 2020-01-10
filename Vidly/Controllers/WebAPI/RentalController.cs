@@ -29,6 +29,12 @@ namespace Vidly.Controllers.WebAPI
             var movies = _context.Movies.Where(
                 m => newRental.MovieIds.Contains(m.Id)).ToList();
 
+            var moviesRented = CheckNumberOfMoviesRented(customer);
+
+            if (moviesRented > RentalConstraint.MaxMoviesUserCanRent)
+
+            return BadRequest(String.Format("Customer can rent max {0} movies.", RentalConstraint.MaxMoviesUserCanRent));
+
             foreach (var movie in movies)
             {
                 if (movie.NumberAvailable == 0)
@@ -91,6 +97,13 @@ namespace Vidly.Controllers.WebAPI
                 Select(Mapper.Map<Rental, RentalDto>);
 
             return Ok(rentalDtos);
+        }
+
+
+        private int CheckNumberOfMoviesRented(Customer customer)
+        {
+            var rentals = _context.NewRentals.Where(rental => rental.Customer_Id == customer.Id);
+            return rentals.Count();
         }
     }
 }
