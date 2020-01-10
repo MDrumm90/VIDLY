@@ -1,32 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace Vidly.Models
+namespace Vidly.Dtos
 {
-    public class Rental
+    public class RentalDto
     {
-       
         public int Id { get; set; }
 
         [Required]
-        [ForeignKey("Customer")]
-        public int Customer_Id { get; set; }
+        public CustomerDto Customer { get; set; }
 
         [Required]
-        public Customer Customer { get; set; }
-
-        [Required]
-        public Movie Movie { get; set; }
+        public MovieDto Movie { get; set; }
 
         public DateTime RentalDate { get; set; }
 
         public DateTime? ReturningDate { get; set; }
-
-
-
     }
 }

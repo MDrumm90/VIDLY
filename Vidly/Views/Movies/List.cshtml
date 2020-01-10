@@ -16,6 +16,8 @@
             <th>Genre</th>
             <th>Release Date</th>
             <th>Number in stock</th>
+            <th>Number Available</th>
+            <th>Delete</th>
         </tr>
     </thead>
     @*<tbody>
@@ -54,15 +56,22 @@
                             {
                                 data: "genre.name"
                             },
+                                {
+                                data: "releaseDate"
+                            },
+                           
                             {
+                                data: "numberInStock"
+                            },
+                            {
+                                data: "numberAvailable"
+                            },
+                             {
                                 data: "id",
                                 render: function (data) {
                                     return "<button class='btn-link js-delete' data-movie-id=" + data + ">Delete</button>"
                                 }
                             },
-                            {
-                                data: "numberInStock"
-                            }
                         ]
                     }
                 );

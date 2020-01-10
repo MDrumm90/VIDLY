@@ -6,12 +6,21 @@ using System.Web.Mvc;
 
 namespace Vidly.Controllers
 {
-    public class RentalsNonAPIController : Controller
+    public class RentalsController : Controller
     {
         // GET: RentalsNonAPI
         public ActionResult New()
         {
             return  View();
         }
+
+        public ActionResult  Index()
+        {
+            return View("List");
+        }
+
+
+
+
     }
 }

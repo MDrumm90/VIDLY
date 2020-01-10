@@ -28,6 +28,10 @@ namespace Vidly.App_Start
             Mapper.CreateMap<Rental, NewRentalDto>();
             Mapper.CreateMap<NewRentalDto, Rental>().ForMember(m => m.Id, opt => opt.Ignore());
 
+
+            Mapper.CreateMap<Rental, RentalDto>();
+            Mapper.CreateMap<RentalDto, Rental>().ForMember(m => m.Id, opt => opt.Ignore());
+
         }
     }
 }

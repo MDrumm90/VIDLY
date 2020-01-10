@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Rentals";
+}
+
+<h2>Rentals</h2>
+
+<p>
+    @Html.ActionLink("New Rental", "New", "Rentals", null, new { @class = "btn btn-warning" })
+</p>
+
+<table class="table table-bordered table-hover" id="rentalTable">
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Customer</th>
+            <th>Date rented</th>
+            <th>Return</th>
+        </tr>
+    </thead>
+</table>
+
+
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+        var table=$("#rentalTable").DataTable
+                (
+                    {
+                        ajax:
+                        {
+                            url: "/api/Rental",
+                            dataSrc: ""
+
+                        },
+                        columns: [
+                            {
+                                data: "movie.name",
+                                render: function (data, type, rental) {
+                                    return "<a href='/movies/edit/" + rental.movie.id+ "'>" + rental.movie.name + "</a>";
+                                }
+                            },
+                            {
+                                data: "customer.name",
+                                render: function (data, type, rental) {
+                                    return "<a href='/customers/edit/" + rental.customer.id + "'>" + rental.customer.name + "</a>";
+                                }
+                            },
+                            {
+                                data: "rentalDate"
+                            },
+                            {
+                                data: "id",
+                                render: function (data) {
+                                    return "<button class='btn-link js-delete' data-rental-id=" + data + ">Return</button>"
+                                }
+                            }
+                        ]
+                    }
+                );
+
+            $("#rentalTable").on("click", ".js-delete", function () {
+                var button = $(this);
+                bootbox.confirm("Please confirm you want to return this movie ?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/rental/" + button.attr("data-rental-id"),
+                            method: "PUT",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}
+
