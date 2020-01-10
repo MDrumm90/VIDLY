@@ -12,7 +12,7 @@
 
         <label>Customer</label>
         <div id="div" class="tt-container">
-            <input id="customer" name="customer" data-rule-validCustomer="true"  required type="text" value="" class="form-control" />
+            <input id="customer" name="customer" data-rule-isDeliquentOnPayment="true" data-rule-validCustomer="true"  required type="text" value="" class="form-control" />
         </div>
     </div>
 
@@ -68,6 +68,7 @@
                 source: customers
             }).on("typeahead:select", function(e, customer) {
                 vm.customerId = customer.id;
+                vm.deliquentOnPayment = customer.deliquentOnPayment;
             });
 
 
@@ -101,6 +102,10 @@
             $.validator.addMethod("atLeastOneMovie", function () {
                 return vm.movieIds.length > 0;
             }, "Please select at least one movie.");
+
+              $.validator.addMethod("isDeliquentOnPayment", function () {
+                return !vm.deliquentOnPayment;
+            }, "Deliquent on payment");
 
                 $.validator.addMethod("moviesRentedLimit", function () {
                 return vm.movieIds.length < 5;

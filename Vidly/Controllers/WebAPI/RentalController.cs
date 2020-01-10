@@ -7,7 +7,6 @@ using System.Web.Http;
 using Vidly.Models;
 using Vidly.Dtos;
 using AutoMapper;
-
 using System.Data.Entity;
 
 namespace Vidly.Controllers.WebAPI

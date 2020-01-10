@@ -272,6 +272,10 @@
     <Compile Include="Migrations\202001021326048_UpdateNumberAvailableMovies.Designer.cs">
       <DependentUpon>202001021326048_UpdateNumberAvailableMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001101340308_CustomerDeliquentOnPayment.cs" />
+    <Compile Include="Migrations\202001101340308_CustomerDeliquentOnPayment.Designer.cs">
+      <DependentUpon>202001101340308_CustomerDeliquentOnPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -708,6 +712,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001021326048_UpdateNumberAvailableMovies.resx">
       <DependentUpon>202001021326048_UpdateNumberAvailableMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101340308_CustomerDeliquentOnPayment.resx">
+      <DependentUpon>202001101340308_CustomerDeliquentOnPayment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
